@@ -38,8 +38,10 @@ public class ShooterCore : ModuleRules
 				"CoreUObject",
 				"Engine",
 				"Slate",
-				"SlateCore",
-				// ... add private dependencies that you statically link with here ...	
+				"SlateCore", 
+				
+				// 애니메이션
+				"AnimGraphRuntime"
 			}
 			);
 		
