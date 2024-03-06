@@ -21,23 +21,32 @@ class SHOOTERCORE_API USCAnimInstanceBase : public UAnimInstance
 	UPROPERTY(BlueprintReadOnly, Category = "Dependency", meta = (AllowPrivateAccess = true))
 	TObjectPtr<UCharacterMovementComponent> CharacterMovement;
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", meta = (AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "State|Movement", meta = (AllowPrivateAccess = true))
 	FVector Velocity;
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", meta = (AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "State|Movement", meta = (AllowPrivateAccess = true))
 	float GroundSpeed;
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", meta = (AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "State|Movement", meta = (AllowPrivateAccess = true))
 	float Direction;
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", meta = (AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "State|Movement", meta = (AllowPrivateAccess = true))
 	bool bShouldMove;
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", meta = (AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "State|Character", meta = (AllowPrivateAccess = true))
 	bool bFalling;
 
-	UPROPERTY(BlueprintReadOnly, Category = "State", meta = (AllowPrivateAccess = true))
+	UPROPERTY(BlueprintReadOnly, Category = "State|Character", meta = (AllowPrivateAccess = true))
 	bool bCrouching;
+
+	UPROPERTY(BlueprintReadOnly, Category = "State|AimOffset", meta = (AllowPrivateAccess = true))
+	float AimYaw;
+
+	UPROPERTY(BlueprintReadOnly, Category = "State|AimOffset", meta = (AllowPrivateAccess = true))
+	float AimPitch;
+
+	UPROPERTY(BlueprintReadWrite, EditDefaultsOnly, Category = "State|AimOffset", meta = (AllowPrivateAccess = true))
+	float InterpSpeed = 15.f;
 
 protected:
 	UFUNCTION(BlueprintPure)
